@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void)
-{	
+{
 	int i;
 	long int li;
 	long long int lli;
