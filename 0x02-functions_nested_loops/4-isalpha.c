@@ -1,32 +1,12 @@
-#include <stdio.h>
+#include "main.h"
 
 /*
- *
  * _isalpha - chechks for lowercase
+ * @c: parameter to be checked
  *
  * Return: 1 if 'c' is lowercase
  *
  */
-int _isalpha(int c);
-/*
- *
- * main - ENTRY POINT
- *
- * Return: Always 0
- *
- */
-int main(void)
-{
-	int c;
-
-	c = _isalpha('A');
-	putchar(c + '0');
-
-	c = _isalpha('a');
-	putchar(c + '0');
-	putchar('\n');
-	return (0);
-}
 int _isalpha(int c)
 {
 	if  ((c >= 'a' || c >= 'A') && (c <= 'z' || c <= 'Z'))
