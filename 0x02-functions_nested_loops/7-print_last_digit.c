@@ -12,8 +12,9 @@ int print_last_digit(int n)
 		n *= -1;
 	_putchar('0' + (n % 10));
 	if (n < 0 && n == INT_MIN)
-		n = -(n % 10);
-	_putchar('0' + n);
-
+	{
+		int a = -( n % 10);
+		_putchar(a + '0');
+	}
 	return (n % 10);
 }
