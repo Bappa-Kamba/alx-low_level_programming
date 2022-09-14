@@ -1,6 +1,6 @@
 #include "main.h"
 
-/*
+/**
  * _isalpha - chechks for lowercase
  * @c: parameter to be checked
  *
