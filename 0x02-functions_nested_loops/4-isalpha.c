@@ -5,7 +5,6 @@
  * @c: parameter to be checked
  *
  * Return: 1 if 'c' is lowercase
- *
  */
 int _isalpha(int c)
 {
