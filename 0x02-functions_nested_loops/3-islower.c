@@ -7,17 +7,15 @@
  * Return: 1 if 'c' is lowercase
  *
  */
-int _islower(int a)
+int _islower(int c)
 {
-	int c;
-
-	for (c = 'a'; c <= 'z'; c++)
+	if (c >= 'a' && c <= 'z')
 	{
-		if (a == c)
-			return (1);
-		else 
-			return (0);
+		return (1);
 	}
-
-	return (0);
+	else
+	{
+		return (0);
+	}
+	_putchar('\n');
 }
