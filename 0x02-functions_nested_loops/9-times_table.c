@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * times_table - print multiplication table
@@ -18,23 +18,23 @@ void times_table(void)
 
 			if (column == 0)
 			{
-				putchar('0' + product);
+				_putchar('0' + product);
 			}
 			else if (product <= 9)
 			{
-				putchar(',');
-				putchar(' ');
-				putchar(' ');
-				putchar('0' + product);
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar('0' + product);
 			}
 			else if (product > 9)
 			{
-				putchar(',');
-				putchar(' ');
-				putchar('0' + (product / 10));
-				putchar('0' + (product % 10));
+				_putchar(',');
+				_putchar(' ');
+				_putchar('0' + (product / 10));
+				_putchar('0' + (product % 10));
 			}
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }
