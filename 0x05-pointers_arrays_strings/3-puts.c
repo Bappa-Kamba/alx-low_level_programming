@@ -15,9 +15,7 @@ void _puts(char *str)
 	{
 		if (*str != '\0')
 			write(1, &str[i], 1);
-		else 
-		{
+		else if (*str == '\0')
 			break;
-		}
 	}
 }
