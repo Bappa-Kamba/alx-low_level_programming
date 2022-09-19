@@ -2,6 +2,8 @@
 
 /**
  * swap_int - swaps two integers
+ * @a: parameter to swap
+ * @b: parameter to swap
  *
  * Return: Always 0
  */
