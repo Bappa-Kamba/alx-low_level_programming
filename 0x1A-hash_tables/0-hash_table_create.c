@@ -11,9 +11,9 @@ hash_table_t *hash_table_create(unsigned long int size)
     // Creates a new hash_table_t
     hash_table_t* table = (hash_table_t*) malloc (sizeof(hash_table_t));
     table->size = size;
-    table->items = (hash_node_t**) calloc (table->size, sizeof(hash_node_t*));
+    table->arrays = (hash_node_t**) calloc (table->size, sizeof(hash_node_t*));
     for (int i=0; i<table->size; i++)
-        table->items[i] = NULL;
+        table->arrays[i] = NULL;
 
     return table;
 
