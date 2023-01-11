@@ -1,67 +1,66 @@
 #include "hash_tables.h"
 
 /**
- * create_node - creates and adds a new node to the hash table
- * @ht: hash table to add node to
- * @key: the key; cannot be an empty string
- * @value: value to be inserted
- * @idx: index to add the node to
- *
- * Return: 1 if successul, 0 otherwise
-*/
+ * create_and_add_node - malloc, set values, and insert node into hash table
+ * @ht: hash table
+ * @key: key; can't be empty string
+ * @value: value
+ * @idx: index to insert in at hash table
+ * Return: 1 if success, 0 if fail
+ */
+int create_and_add_node(hash_table_t *ht, const char *key, const char *value,
+			unsigned long int idx)
+{
+	hash_node_t *node = NULL;
+	char *k;
+	char *v;
 
-int create_node(hash_table_t* ht, const char* key, const char* value, unsigned long int idx) {
+	node = malloc(sizeof(hash_node_t));
+	if (!node)
+		return (0);
 
-    hash_node_t *node = NULL;
-    char *dup_key;
-    char *dup_value;
+	k = strdup(key);
+	if (!k)
+	{
+		free(node);
+		return (0);
+	}
 
-    node = malloc (sizeof(hash_node_t));
+	v = strdup(value);
+	if (!v)
+	{
+		free(k);
+		free(node);
+		return (0);
+	}
 
-    if (!node)
-        return (0);
+	node->key = k;
+	node->value = v;
 
-    dup_key = strdup(key);
-    if (!dup_key)
-    {
-        free(node);
-        return (0);
-    }
-
-    dup_value = strdup(value);
-    if (!dup_value)
-    {
-        free(dup_key);
-        free(node);
-        return (0);
-    }
-
-    node->key = dup_key;
-    node->value = dup_value;
-
-    if ((ht->array)[idx] == NULL)
+	if ((ht->array)[idx] == NULL)
 		node->next = NULL;
 	else
 		node->next = (ht->array)[idx];
 	(ht->array)[idx] = node;
 
 	return (1);
-    
 }
 
 /**
- *
- * hash_table_set - inserts into the hash table
- * @ht: hash table to insert into
- * @key: key
- * @value: value to be inserted or updated
- *
- * Return: 1 if successul, 0 otherwise
-*/
-
+ * hash_table_set - add element to hash table
+ * @ht: hash table
+ * @key: key; can't be empty string
+ * @value: value
+ * Return: 1 if success, 0 if fail
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-    unsigned long int idx;
+	/* get index */
+	/* if key already exists, update value and return */
+	/* else create node */
+	/* set ht idx ptr to node; else add node to front if collision */
+
+	unsigned long int idx;
 	hash_node_t *node = NULL;
 	char *v;
 
@@ -84,5 +83,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 
-	return (create_node(ht, key, value, idx));
+	return (create_and_add_node(ht, key, value, idx));
 }
