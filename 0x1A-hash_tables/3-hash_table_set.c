@@ -10,7 +10,7 @@
  * Return: 1 if successul, 0 otherwise
 */
 
-int create_node(hash_table_t* ht, char* key, char* value, unsigned long int idx) {
+int create_node(hash_table_t* ht, const char* key, const char* value, unsigned long int idx) {
 
     hash_node_t *node = NULL;
     char *dup_key;
