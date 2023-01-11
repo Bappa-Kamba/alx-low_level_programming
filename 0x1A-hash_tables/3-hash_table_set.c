@@ -16,7 +16,7 @@ int create_node(hash_table_t* ht, char* key, char* value, unsigned long int idx)
     char *dup_key;
     char *dup_value;
 
-    node = (hash_table_t*) malloc (sizeof(hash_table_t));
+    node = malloc (sizeof(hash_node_t));
 
     if (!node)
         return (0);
