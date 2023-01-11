@@ -12,7 +12,7 @@
 
 int create_node(hash_table_t* ht, char* key, char* value, unsigned long int idx) {
 
-    hash_table_t *node = NULL;
+    hash_node_t *node = NULL;
     char *dup_key;
     char *dup_value;
 
