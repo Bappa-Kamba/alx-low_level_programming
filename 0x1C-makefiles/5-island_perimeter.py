@@ -13,13 +13,13 @@ def island_perimeter(grid):
             if grid[row][col] == 1:
                 perimeter += 4
 
-                if row > 0 and grid[row - 1][col] == 1:
+                if row > 0 and grid[row - 1][col] == 0:
                     perimeter -= 1  # Decrease by 2 for the top side
-                if col > 0 and grid[row][col - 1] == 1:
+                if col > 0 and grid[row][col - 1] == 0:
                     perimeter -= 1  # Decrease by 2 for the left side
-                if row < rows - 1 and grid[row + 1][col] == 1:
+                if row < rows - 1 and grid[row + 1][col] == 0:
                     perimeter -= 1  # Decrease by 2 for the bottom side
-                if col < cols - 1 and grid[row][col + 1] == 1:
+                if col < cols - 1 and grid[row][col + 1] == 0:
                     perimeter -= 1  # Decrease by 2 for the right side
 
     return perimeter
